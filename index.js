@@ -7,19 +7,18 @@ async function main() {
   const userListEl = document.querySelector(".user-list");
   console.log(usersData);
 
-  userListEl.innerHTML = usersData
-    .map((user) => userHTML(user)).join("")
+  userListEl.innerHTML = usersData.map((user) => userHTML(user)).join("");
 }
 
 main();
 
 function showUserPosts(id) {
-    localStorage.setItem("id",id)
-    window.location.href = `${window.location.origin}/user.html`
+  localStorage.setItem("id", id);
+  window.location.href = `${window.location.origin}/user.html`;
 }
 
 function userHTML(user) {
-    return `<div class="user-card" onclick="showUserPosts(${user.id})">
+  return `<div class="user-card" onclick="showUserPosts(${user.id})">
     <div class="user-card__container">
     <h3>${user.name}</h3>
     <p><b>Email:</b>${user.email}</p>
